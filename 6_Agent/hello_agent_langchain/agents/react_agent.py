@@ -2,13 +2,11 @@ from langchain_classic.agents import create_react_agent, AgentExecutor
 from langchain_core.prompts import PromptTemplate
 from ..core.agent import BaseAgent
 
-
 REACT_PROMPT_TPL = """Answer the following questions as best you can. You have access to the following tools:
 
 {tools}
 
 Use the following format:
-
 Question: the input question you must answer
 Thought: you should always think about what to do
 Action: the action to take, should be one of [{tool_names}]
@@ -23,7 +21,6 @@ Begin!
 Question: {input}
 Thought:{agent_scratchpad}
 """
-
 
 class ReActAgent(BaseAgent):
     def run(self, query: str) -> str:
